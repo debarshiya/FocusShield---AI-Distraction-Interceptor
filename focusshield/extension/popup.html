@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">FocusShield</div>
+
+    <label class="row">
+      <span>Enabled</span>
+      <input id="enabled" type="checkbox" />
+    </label>
+
+    <label class="row">
+      <span>Voice</span>
+      <input id="voiceEnabled" type="checkbox" />
+    </label>
+
+    <div class="section">
+      <div class="label">Backend URL</div>
+      <input id="backendBaseUrl" class="input" placeholder="http://localhost:8080" />
+    </div>
+
+    <div class="section">
+      <div class="label">Thresholds</div>
+      <div class="grid">
+        <label>Tab switches / 5 min <input id="tabSwitchesPer5Min" type="number" min="1" /></label>
+        <label>Doomscroll minutes <input id="doomscrollMinutes" type="number" min="1" /></label>
+        <label>Scroll / 10 min <input id="scrollEventsPer10Min" type="number" min="1" /></label>
+        <label>Refreshes / 3 min <input id="refreshesPer3Min" type="number" min="1" /></label>
+      </div>
+      <button id="save" class="btn">Save</button>
+    </div>
+
+    <div class="section">
+      <div class="label">Quick stats (local)</div>
+      <pre id="stats" class="stats">Loading…</pre>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
