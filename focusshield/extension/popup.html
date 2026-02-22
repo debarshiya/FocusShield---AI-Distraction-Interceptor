@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="logo">FS</div>
+        <div>
+          <div class="title">FocusShield</div>
+          <div class="subtitle">AI micro-interventions for focus</div>
+        </div>
+      </div>
+      <div class="pill" id="statusPill">LIVE</div>
+    </header>
+
+    <section class="card">
+      <div class="cardHead">
+        <div class="cardTitle">Controls</div>
+        <div class="cardHint">Runs silently in the background</div>
+      </div>
+
+      <div class="row">
+        <div class="rowText">
+          <div class="rowTitle">Enabled</div>
+          <div class="rowSub">Track signals and trigger interventions</div>
+        </div>
+        <label class="switch">
+          <input id="enabled" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="row">
+        <div class="rowText">
+          <div class="rowTitle">Voice</div>
+          <div class="rowSub">Read interventions aloud</div>
+        </div>
+        <label class="switch">
+          <input id="voiceEnabled" type="checkbox" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <div class="cardTitle">Backend</div>
+        <div class="cardHint">Local dev or deployed API</div>
+      </div>
+
+      <label class="field">
+        <span>Backend URL</span>
+        <input id="backendBaseUrl" class="input" placeholder="http://localhost:8080" />
+      </label>
+
+      <div class="mini">
+        <div class="miniDot"></div>
+        <div class="miniText">Tip: keep server running while testing overlays.</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <div class="cardTitle">Thresholds</div>
+        <div class="cardHint">Lower values trigger faster while demoing</div>
+      </div>
+
+      <div class="grid">
+        <label class="metric">
+          <div class="metricText">
+            <div class="metricTitle">Tab switches</div>
+            <div class="metricSub">per 5 minutes</div>
+          </div>
+          <input id="tabSwitchesPer5Min" type="number" min="1" />
+        </label>
+
+        <label class="metric">
+          <div class="metricText">
+            <div class="metricTitle">Doomscroll</div>
+            <div class="metricSub">minutes on high-risk</div>
+          </div>
+          <input id="doomscrollMinutes" type="number" min="1" />
+        </label>
+
+        <label class="metric">
+          <div class="metricText">
+            <div class="metricTitle">Scroll events</div>
+            <div class="metricSub">per 10 minutes</div>
+          </div>
+          <input id="scrollEventsPer10Min" type="number" min="1" />
+        </label>
+
+        <label class="metric">
+          <div class="metricText">
+            <div class="metricTitle">Refresh loops</div>
+            <div class="metricSub">per 3 minutes</div>
+          </div>
+          <input id="refreshesPer3Min" type="number" min="1" />
+        </label>
+      </div>
+
+      <button id="save" class="btn">
+        <span class="btnGlow"></span>
+        Save Settings
+      </button>
+    </section>
+
+    <section class="card">
+      <div class="cardHead">
+        <div class="cardTitle">Quick stats</div>
+        <div class="cardHint">Local snapshot from the service worker</div>
+      </div>
+      <pre id="stats" class="stats">Loading…</pre>
+    </section>
+
+    <footer class="foot">
+      <div class="footText">FocusShield • MV3</div>
+      <div class="footText dim">Demo-ready UI, same logic</div>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

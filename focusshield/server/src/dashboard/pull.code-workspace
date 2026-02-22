@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		},
+		{
+			"path": "../../../../../../FocusShield/server/src/db"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "pull"
+	}
+}

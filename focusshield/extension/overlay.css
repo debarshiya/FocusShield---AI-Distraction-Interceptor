@@ -1,0 +1,2 @@
+/* Empty on purpose because we render styles inside Shadow DOM.
+   Kept to satisfy manifest css requirement if you later add non-shadow fallback. */
