@@ -368,15 +368,15 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   }, 60_000);
 
 
-  setTimeout(() => {
+ setTimeout(() => {
   if (state.activeTabId != null) {
     chrome.tabs.sendMessage(state.activeTabId, {
       type: "SHOW_OVERLAY",
       payload: {
         interventionId: "test_overlay",
         gemini: {
-          summary: "This is a test overlay.",
-          insight: "If you can see this, the overlay system works.",
+          summary: "Focus check-in: attention drift detected",
+insight: "Your browsing pattern suggests a short distraction cycle. A quick reset can restore clarity.",
           microResets: [
             "Take 3 deep breaths.",
             "Look away from the screen for 10 seconds.",
@@ -387,7 +387,7 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
         audio: null,
         solana: null
       }
-    });
+    }).catch(() => {}); 
   }
 }, 5000);
 
