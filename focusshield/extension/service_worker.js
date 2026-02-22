@@ -366,4 +366,31 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   setInterval(() => {
     try { computeContextAndMaybeTrigger(); } catch {}
   }, 60_000);
+
+
+  setTimeout(() => {
+  if (state.activeTabId != null) {
+    chrome.tabs.sendMessage(state.activeTabId, {
+      type: "SHOW_OVERLAY",
+      payload: {
+        interventionId: "test_overlay",
+        gemini: {
+          summary: "This is a test overlay.",
+          insight: "If you can see this, the overlay system works.",
+          microResets: [
+            "Take 3 deep breaths.",
+            "Look away from the screen for 10 seconds.",
+            "Write one thing you want to finish next."
+          ],
+          nextActionSuggestion: "Work for 5 focused minutes."
+        },
+        audio: null,
+        solana: null
+      }
+    });
+  }
+}, 5000);
+
+
+
 })();
