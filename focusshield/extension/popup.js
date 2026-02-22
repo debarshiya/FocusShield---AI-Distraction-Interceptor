@@ -1,12 +1,12 @@
-// async function getStatus() {
-//   return chrome.runtime.sendMessage({ type: "GET_STATUS" });
-// }
+async function getStatus() {
+  return chrome.runtime.sendMessage({ type: "GET_STATUS" });
+}
 
-// async function setPrefs(prefs) {
-//   return chrome.runtime.sendMessage({ type: "SET_PREFS", prefs });
-// }
+async function setPrefs(prefs) {
+  return chrome.runtime.sendMessage({ type: "SET_PREFS", prefs });
+}
 
-// function qs(id) { return document.getElementById(id); }
+function qs(id) { return document.getElementById(id); }
 
 // (async function init() {
 //   const st = await getStatus();
